@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function CoursesPage() {
   const courses = [
     { slug: "dsa-masterclass", title: "DSA Masterclass", description: "Comprehensive DSA with hands-on problems.", price: "₹4,999" },
@@ -16,7 +17,7 @@ export default function CoursesPage() {
               <p className="text-sm text-gray-600 mb-4">{c.description}</p>
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-violet-700">{c.price}</span>
-                <a href={`/courses/${c.slug}`} className="text-sm text-white bg-violet-600 px-4 py-2 rounded-md hover:bg-violet-700">View</a>
+                <Link href={`/courses/${c.slug}`} className="text-sm text-white bg-violet-600 px-4 py-2 rounded-md hover:bg-violet-700">View</Link>
               </div>
             </div>
           </div>

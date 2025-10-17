@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* Design tokens for The CodeCrush */
+:root {
+  --cc-bg: #0A0F1C; /* Primary deep navy */
+  --cc-text: #FFFFFF; /* Text primary */
+  --cc-violet: #7C3AED; /* Accent 1 */
+  --cc-cyan: #22D3EE; /* Accent 2 */
+  --cc-mint: #00BFA6; /* Accent 3 */
+  --cc-glass: rgba(255, 255, 255, 0.08); /* Glass effect */
+  --cc-shadow-glow: 0 0 24px rgba(124, 58, 237, 0.35), 0 0 18px rgba(34, 211, 238, 0.25);
+  --cc-radius: 14px;
+  --cc-letter-spacing: 0.5px; /* Letter spacing */
+}
+
+@theme inline {
+  --color-cc-bg: var(--cc-bg);
+  --color-cc-text: var(--cc-text);
+  --color-cc-violet: var(--cc-violet);
+  --color-cc-cyan: var(--cc-cyan);
+  --color-cc-mint: var(--cc-mint);
+  --font-sans: var(--font-cc-sans);
+}
+
+/* Base styles */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--cc-bg);
+  color: var(--cc-text);
+  letter-spacing: var(--cc-letter-spacing);
+}
+
+/* Gradients and effects */
+.cc-gradient-cta {
+  background-image: linear-gradient(90deg, var(--cc-violet), var(--cc-cyan));
+}
+
+.cc-glass {
+  background: var(--cc-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--cc-radius);
+}
+
+.cc-outline-gradient {
+  position: relative;
+}
+.cc-outline-gradient:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(90deg, rgba(124,58,237,0.6), rgba(34,211,238,0.6));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cc-hover-glow:hover {
+  box-shadow: var(--cc-shadow-glow);
+}
+
+/* Motion */
+@keyframes floatDrift {
+  0% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+  50% { transform: translateY(-10px) translateX(6px); opacity: 1; }
+  100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+}
+
+.cc-particle {
+  animation: floatDrift 6s ease-in-out infinite;
+}
+
+.cc-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.cc-reveal.cc-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utilities */
+.cc-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cc-terminal {
+  background: rgba(10, 15, 28, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cc-terminal-bar {
+  height: 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cc-scroll-smooth {
+  scroll-behavior: smooth;
+}
+
+/* Infinite marquee for testimonials */
+@keyframes ccMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.cc-marquee {
+  overflow: hidden;
+}
+.cc-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 16px;
+  animation: ccMarquee 30s linear infinite;
+}
+.cc-marquee:hover .cc-marquee-track {
+  animation-play-state: paused;
+}
+.cc-marquee-card {
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+.cc-marquee-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px rgba(34,211,238,0.25);
+}

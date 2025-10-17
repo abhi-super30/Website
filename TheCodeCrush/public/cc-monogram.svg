@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#22D3EE"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0A0F1C"/>
+  <g stroke="url(#g)" stroke-width="28" fill="none" stroke-linecap="round">
+    <path d="M346 196c-20-24-49-36-82-36-66 0-112 46-112 96s46 96 112 96c33 0 62-12 82-36"/>
+    <path d="M290 196c-20-24-49-36-82-36-66 0-112 46-112 96s46 96 112 96c33 0 62-12 82-36" opacity="0.6"/>
+  </g>
+  <title>CC Monogram</title>
+  <desc>Brand favicon for The CodeCrush</desc>
+</svg>
+
+

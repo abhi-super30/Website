@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function AdminSidebar() {
   const linkClass = "block px-3 py-2 rounded-md text-sm hover:bg-gray-100";
   return (
@@ -7,10 +9,10 @@ export default function AdminSidebar() {
         <div className="text-xs text-gray-500">TheCodeCrush</div>
       </div>
       <nav className="p-3 space-y-1">
-        <a className={linkClass} href="/admin">Dashboard</a>
-        <a className={linkClass} href="/admin/courses">Courses</a>
-        <a className={linkClass} href="/admin/users">Users</a>
-        <a className={linkClass} href="/admin/orders">Orders</a>
+        <Link className={linkClass} href="/admin">Dashboard</Link>
+        <Link className={linkClass} href="/admin/courses">Courses</Link>
+        <Link className={linkClass} href="/admin/users">Users</Link>
+        <Link className={linkClass} href="/admin/orders">Orders</Link>
       </nav>
     </aside>
   );

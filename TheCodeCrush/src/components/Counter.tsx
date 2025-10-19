@@ -14,6 +14,8 @@ export default function Counter({ target, durationMs = 1300, suffix = "", classN
   const startRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Reset start time whenever dependencies change, otherwise animation may jump to end
+    startRef.current = null;
     let raf = 0;
     const animate = (timestamp: number) => {
       if (startRef.current === null) startRef.current = timestamp;

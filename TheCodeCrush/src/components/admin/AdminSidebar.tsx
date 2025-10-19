@@ -4,7 +4,7 @@ export default function AdminSidebar() {
     <aside className="w-60 shrink-0 border-r bg-white h-full">
       <div className="px-4 py-4 border-b">
         <div className="text-base font-semibold">Admin</div>
-        <div className="text-xs text-gray-500">AbhishekClasses</div>
+        <div className="text-xs text-gray-500">TheCodeCrush</div>
       </div>
       <nav className="p-3 space-y-1">
         <a className={linkClass} href="/admin">Dashboard</a>
